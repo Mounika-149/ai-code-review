@@ -1,0 +1,14 @@
+{
+  "name": "code-review-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "backend": "npm --prefix BackEnd start",
+    "frontend": "npm --prefix FrontEnd run dev",
+    "dev": "concurrently \"npm --prefix BackEnd start\" \"npm --prefix FrontEnd run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
+

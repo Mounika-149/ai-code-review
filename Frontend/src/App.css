@@ -1,63 +1,127 @@
-* {
-  margin: 0%;
-  padding: 0%;
+/* ============================= */
+/*  Global Page Setup            */
+/* ============================= */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0d0d0d;
+  font-family: "Fira Code", monospace;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* ============================= */
+/*  Layout Container             */
+/* ============================= */
+
+main {
+  display: flex;
+  flex-direction: row; /* Side by side */
+  height: 100vh;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
-  height: 100%;
-  width: 100%;
-}
+/* ============================= */
+/*  Left Panel (Code Editor)     */
+/* ============================= */
 
-main {
-  height: 100%;
-  width: 100%;
-  padding: 1.5rem;
+.left {
+  flex: 1;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
-main .left,
-main .right {
-  height: 100%;
-  flex-basis: 50%;
-  border-radius: 0.7rem;
-}
-
-main .left {
-  background-color: #000000;
-  position: relative;
-}
-
-.left .code,
-.code pre,
-.code pre code {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  border-radius: 0.7rem;
-  background-color: #0c0c0c;
-}
-
-main .left .review {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  background-color: rgb(219, 219, 255);
-  color: #000000;
-  padding: 0.5rem 2rem;
-  font-weight: 500;
-  cursor: pointer;
-  user-select: none;
-  border-radius: 0.7rem;
-}
-
-
-main .right {
-  background-color: #343434;
-  padding: 1rem 2rem;
-  font-size: 1.5rem;
+.code {
+  flex: 1;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #0f0f0f;
   overflow: auto;
+}
+
+.review {
+  background-color: #4ade80;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+  align-self: center;
+  transition: background-color 0.2s ease;
+}
+
+.review:hover {
+  background-color: #22c55e;
+}
+
+/* ============================= */
+/*  Right Panel (AI Review)      */
+/* ============================= */
+
+.right {
+  flex: 1;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* Markdown Styles */
+.right h1, .right h2, .right h3 {
+  color: #4ade80;
+  margin-bottom: 10px;
+}
+
+.right p, .right li {
+  color: #d4d4d4;
+  line-height: 1.6;
+}
+
+.right code {
+  background: #2b2b2b;
+  color: #ffcc00;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+.right pre {
+  background: #2a2a2a;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 15px;
+  margin: 10px 0;
+}
+
+/* ============================= */
+/*  Responsive for Small Screens */
+/* ============================= */
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left, .right {
+    width: 100%;
+    height: auto;
+  }
+
+  .review {
+    align-self: stretch;
+  }
 }
