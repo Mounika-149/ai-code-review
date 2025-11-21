@@ -27,7 +27,7 @@ function App() {
 setReview(response.data)
     } catch (error) {
       console.error("Error fetching review:", error)
-      setReview("⚠️ Unable to fetch review. Please check backend connection.")
+      setReview("⚠️ Unable to fetch review. Please write your code.")
     }
   }
 
