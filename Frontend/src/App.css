@@ -81,7 +81,6 @@ main {
   box-sizing: border-box;
   overflow-y: auto;
   height: 100%;
-  border: 2px solid red;  /* Debug border - remove later */
 }
 
 /* Markdown Styles */
